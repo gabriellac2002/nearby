@@ -8,6 +8,7 @@ import {
   Rubik_500Medium,
   Rubik_700Bold,
 } from "@expo-google-fonts/rubik";
+import { Loading } from "@/components/loading";
 
 export default function Layout() {
   const [fontLoaded] = useFonts({
@@ -17,7 +18,9 @@ export default function Layout() {
     Rubik_700Bold,
   });
 
-  if (!fontLoaded) return;
+  if (!fontLoaded) {
+    return <Loading />;
+  }
 
   return (
     <Stack
